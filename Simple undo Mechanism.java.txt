@@ -1,0 +1,62 @@
+
+
+//Simple Undo Mechanism
+
+
+import java.util.Stack;
+import java.util.Scanner;
+
+public class Print {
+
+
+    public static void main(String[] args){
+
+      Scanner in = new Scanner(System.in);
+      Stack<String> undoMechanism = new Stack<>();
+
+        String Currnet;
+        String userAnswer;
+
+
+
+         System.out.println("Enter the character you want to store : ");
+         undoMechanism.push(in.nextLine());
+         System.out.println("Enter the character you want to store : ");
+         undoMechanism.push(in.nextLine());
+         System.out.println("Enter the character you want to store : ");
+         undoMechanism.push(in.nextLine());
+
+
+
+        if(undoMechanism.size() != 0){
+
+          System.out.println("Do you want to undo ? ... answer format (yes/no)");
+          userAnswer = in.nextLine();
+
+           if(userAnswer == "yes"){
+
+                 undoMechanism.removeLast();
+
+
+           }
+           else if(userAnswer == "no"){
+
+               System.out.println("Nothing been undo ");
+           }
+
+      }
+
+      else {
+
+          System.out.println("Please enter character only ");
+      }
+
+        Currnet = undoMechanism.toString();
+        System.out.println("The current state of the stack : "+Currnet);
+        System.out.println(undoMechanism.size());
+
+
+
+    }
+
+}
